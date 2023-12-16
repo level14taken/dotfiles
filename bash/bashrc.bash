@@ -138,4 +138,14 @@ set -o vi
 alias ww=wikit
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-alias cls=clear
+
+
+cd() {
+    builtin cd "$@" && ls
+}
+
+bind '"\C-h":"cd ~\n"'
+
+bind '"\C-l":"clear\n"'
+alias ll="ls -lha"
+alias gsc="git add -A && git commit"
