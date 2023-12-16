@@ -151,6 +151,6 @@ alias ll="ls -lha"
 alias gsc="git add -A && git commit"
 bind '"\C-v":"fc\n"'
 bind '"\C-k":"cd ..\n"'
-
+source ~/.bash-powerline.sh
 
 
