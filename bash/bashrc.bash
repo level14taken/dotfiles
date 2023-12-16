@@ -149,3 +149,8 @@ bind '"\C-h":"cd ~\n"'
 bind '"\C-l":"clear\n"'
 alias ll="ls -lha"
 alias gsc="git add -A && git commit"
+bind '"\C-v":"fc\n"'
+bind '"\C-k":"cd ..\n"'
+
+
+
