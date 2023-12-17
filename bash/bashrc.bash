@@ -152,5 +152,6 @@ alias gsc="git add -A && git commit"
 bind '"\C-v":"fc\n"'
 bind '"\C-k":"cd ..\n"'
 source ~/.bash-powerline.sh
-
+# If running from tty1 start sway
+[ "$(tty)" = "/dev/tty1" ] && exec sway
 
