@@ -1,7 +1,9 @@
-syntax enable
-set paste
+syntax on
+let mapleader=","
+set nocompatible
 set wildmenu
 set noerrorbells
+set dir=/tmp/
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -13,15 +15,37 @@ set smartcase
 set hlsearch
 nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 set incsearch
+set listchars=tab:\|\
+nnoremap <leader><tab> :set list!<cr>
+set pastetoggle=<F2>
 set colorcolumn=80
 set number
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
+" highlight ColorColumn ctermbg=0 guibg=lightblue
 set nrformats=
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 nnoremap vv 0v$
+
+" Fil,we and Window Management
+	inoremap <leader>w <Esc>:w<CR>
+" ,w for write in normal mode as well
+	nnoremap <leader>w :w<CR>
+
+" ,q for quit
+	inoremap <leader>q <ESC>:q<CR>
+	nnoremap <leader>q :q<CR>
+",x close after saving work 
+	inoremap <leader>x <ESC>:x<CR>
+	nnoremap <leader>x :x<CR>
+" ,e for explorer ,t for new tab explorer    ,v save and explore in vsplit ,s saves and opens explorer in that split
+	nnoremap <leader>e :Ex<CR>
+	nnoremap <leader>t :tabnew<CR>:Ex<CR>
+	nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
+	nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
 
 " Return to the same line you left off at
 	augroup line_return
@@ -69,4 +93,5 @@ call plug#end()
 
 colorscheme default 
 set background=dark
-
+set showcmd
+filetype plugin indent on
