@@ -13,26 +13,31 @@ set relativenumber
 set nowrap
 set smartcase
 set hlsearch
-nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
+"nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 set incsearch
-set listchars=tab:\|\
+set listchars=tab:\|\\,eol:\$,trail:~,extends:>,precedes:<,nbsp:!,space:·
+"set showbreak=\\
 nnoremap <leader><tab> :set list!<cr>
-set pastetoggle=<F2>
-set colorcolumn=80
+"set pastetoggle=<F2>
+"set colorcolumn=80
+nnoremap  <leader><space> :so ~/.vimrc<cr>
 set number
 " nnoremap n nzzzv
-" nnoremap N Nzzzv
+" noremap N Nzzzv
 " highlight ColorColumn ctermbg=0 guibg=lightblue
 set nrformats=
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
 nnoremap vv 0v$
-
-" Fil,we and Window Management
+set foldmethod=indent
+nnoremap <space> za
+"Open all folds by ,f
+nnoremap <leader>f zR 
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>h gT 
+nnoremap <leader>l gt 
+nnoremap <leader>p <C-w><C-w>
+" File and Window Management
+" ,w for write in normal mode and insert mode    
 	inoremap <leader>w <Esc>:w<CR>
-" ,w for write in normal mode as well
 	nnoremap <leader>w :w<CR>
 
 " ,q for quit
@@ -77,15 +82,15 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'vim-scripts/ReplaceWithRegister'
+" Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
-Plug 'tpope/vim-fugitive'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'tpope/vim-fugitive'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'kana/vim-textobj-user'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'christoomey/vim-system-copy'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'christoomey/vim-system-copy'
 
 
 
@@ -94,4 +99,3 @@ call plug#end()
 colorscheme default 
 set background=dark
 set showcmd
-filetype plugin indent on
