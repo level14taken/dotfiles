@@ -156,4 +156,4 @@ source ~/.bash-powerline.sh
 alias wrk="conda activate wrk"
 alias base="conda activate base"
 alias sb="source ~/.bashrc"
-alias jn="conda activate wrk;jupyter-notebook"
+alias jn="conda activate wrk;jupyter-notebook > /dev/null 2>&1 &"
